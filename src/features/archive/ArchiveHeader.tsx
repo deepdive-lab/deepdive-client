@@ -1,19 +1,14 @@
-import { Search, Filter } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { Search } from "lucide-react"
 import { Input } from "@/components/ui/input"
 
 interface ArchiveHeaderProps {
   search: string
   onSearchChange: (value: string) => void
-  isMobileFilterOpen: boolean
-  onToggleMobileFilter: () => void
 }
 
 export function ArchiveHeader({
   search,
   onSearchChange,
-  isMobileFilterOpen,
-  onToggleMobileFilter,
 }: ArchiveHeaderProps) {
   return (
     <div className="mb-10 flex flex-col items-start gap-4 md:flex-row md:items-center md:justify-between">
@@ -23,7 +18,7 @@ export function ArchiveHeader({
         </p>
         <h2 className="text-3xl font-bold text-white">Latest Curations</h2>
         <p className="text-sm text-slate-400">
-          필터를 조합해 원하는 글을 빠르게 찾아보세요.
+          Explore technical insights from top engineering teams.
         </p>
       </div>
 
@@ -32,19 +27,11 @@ export function ArchiveHeader({
           <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-500" />
           <Input
             placeholder="Search articles..."
-            className="pl-9"
+            className="pl-9 bg-slate-900/50 border-slate-800 focus:ring-indigo-500/50"
             value={search}
             onChange={(e) => onSearchChange(e.target.value)}
           />
         </div>
-        <Button
-          variant="outline"
-          className="md:hidden"
-          onClick={onToggleMobileFilter}
-          aria-pressed={isMobileFilterOpen}
-        >
-          <Filter className="h-4 w-4" />
-        </Button>
       </div>
     </div>
   )

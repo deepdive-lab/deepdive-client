@@ -2,7 +2,7 @@ import { useMemo, useState } from "react"
 import { POSTS } from "@/data/content"
 import type { FilterState } from "@/types/content"
 import { ArchiveHeader } from "./ArchiveHeader"
-import { ArchiveSidebar } from "./ArchiveSidebar"
+import { ArchiveFilterBar } from "./ArchiveFilterBar"
 import { ArchiveContent } from "./ArchiveContent"
 
 const createInitialFilters = (): FilterState => ({
@@ -13,7 +13,6 @@ const createInitialFilters = (): FilterState => ({
 
 export function Archive() {
   const [filters, setFilters] = useState<FilterState>(() => createInitialFilters())
-  const [isMobileFilterOpen, setIsMobileFilterOpen] = useState(false)
 
   const toggleCompany = (id: string) => {
     setFilters((prev) => {
@@ -57,18 +56,16 @@ export function Archive() {
         <ArchiveHeader
           search={filters.search}
           onSearchChange={(value) => setFilters((prev) => ({ ...prev, search: value }))}
-          isMobileFilterOpen={isMobileFilterOpen}
-          onToggleMobileFilter={() => setIsMobileFilterOpen((open) => !open)}
         />
 
-        <div className="flex flex-col gap-10 lg:flex-row">
-          <ArchiveSidebar
-            filters={filters}
-            onToggleTag={toggleTag}
-            onToggleCompany={toggleCompany}
-            onClearFilters={clearFilters}
-            isOpen={isMobileFilterOpen}
-          />
+        <ArchiveFilterBar
+          filters={filters}
+          onToggleTag={toggleTag}
+          onToggleCompany={toggleCompany}
+          onClearFilters={clearFilters}
+        />
+
+        <div className="flex flex-col gap-10">
           <ArchiveContent
             posts={filteredPosts}
             onClearFilters={clearFilters}

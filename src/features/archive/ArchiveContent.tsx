@@ -11,7 +11,7 @@ interface ArchiveContentProps {
 export function ArchiveContent({ posts, onClearFilters }: ArchiveContentProps) {
   return (
     <div className="flex-1">
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         {posts.length > 0 ? (
           posts.map((post) => (
             <Card
@@ -24,6 +24,15 @@ export function ArchiveContent({ posts, onClearFilters }: ArchiveContentProps) {
                     {post.companyName}
                   </Badge>
                   <span className="text-xs text-slate-500">{post.date}</span>
+                </div>
+
+                {/* 여기에 해당 Card 그림 들어가게 해줘*/}
+                <div className="overflow-hidden rounded-md border border-slate-800">
+                  <img
+                    src={post.thumbnail}
+                    alt={post.title}
+                    className="aspect-video w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
                 </div>
 
                 <div className="flex-1 space-y-2">

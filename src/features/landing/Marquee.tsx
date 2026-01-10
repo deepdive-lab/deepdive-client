@@ -22,7 +22,7 @@ export function BrandMarquee() {
                   <img
                     src={brand.logoUrl}
                     alt={brand.name}
-                    className="h-8 max-w-[120px] object-contain opacity-60 transition-all group-hover:opacity-100 group-hover:grayscale-0 grayscale invert"
+                    className="h-8 max-w-[120px] object-contain opacity-60 transition-all group-hover:opacity-100"
                     loading="lazy"
                   />
                 </div>

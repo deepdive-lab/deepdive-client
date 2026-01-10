@@ -31,12 +31,11 @@ export function LatestPostsCarousel() {
         {/* Header Section */}
         <div className="mb-16 text-center">
           <h2 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
-            High-performance AI built by experts
+            Into the Engine Room
           </h2>
           <div className="mx-auto mt-6 max-w-2xl">
             <p className="text-lg text-slate-400">
-              Built and refined by our team of AI experts, our technology brings
-              the highest standards of accuracy and performance to your business.
+              Peek inside the Black Box and pull the latest commits from the frontiers.
             </p>
           </div>
         </div>

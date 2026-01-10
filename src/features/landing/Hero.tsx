@@ -32,6 +32,10 @@ export const Hero: React.FC<HeroProps> = ({ onStartReading, onSubscribeClick }) 
         <p className="text-lg md:text-xl text-slate-400 max-w-2xl mb-10 leading-relaxed animate-fade-in [animation-delay:200ms]">
           Curating collection of deep-dives, under-the-hood, and technical insights from the teams leading the tech frontiers.<br />
           Subscribe and get the latest posts delivered to your inbox.
+
+          {/* Redis, MongoDB, RabbitMQ 부터 최신 LangChain, Pinecone, Neo4j 까지<br />
+          글로벌 기술 팀의 공식 엔지니어링 블로그를 한 곳에 모았습니다.<br />
+          각 회사의 개발팀이 직접 작성한 글들을 통해 사용중인 기술을 200% 활용해보세요! */}
         </p>
 
         <div className="flex flex-col sm:flex-row items-center gap-4 animate-fade-in [animation-delay:300ms]">

@@ -1,19 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Hero } from '@/features/landing/Hero';
 import { BrandMarquee } from '@/features/landing/Marquee';
 import { LatestPostsCarousel } from '@/features/landing/LatestPostCarousel';
+import { SubscribeDialog } from '@/features/landing/SubscribeDialog';
 
 export const LandingPage: React.FC = () => {
   const navigate = useNavigate();
+  const [isSubscribeOpen, setIsSubscribeOpen] = useState(false);
 
   const handleStartReading = () => {
     navigate('/archive');
   };
 
   const handleSubscribe = () => {
-    // For now, let's just scroll to something or keep it simple
-    console.log('Subscribe clicked');
+    setIsSubscribeOpen(true);
   };
 
   return (
@@ -24,6 +25,11 @@ export const LandingPage: React.FC = () => {
       />
       <BrandMarquee />
       <LatestPostsCarousel />
+
+      <SubscribeDialog
+        open={isSubscribeOpen}
+        onOpenChange={setIsSubscribeOpen}
+      />
     </div>
   );
 };

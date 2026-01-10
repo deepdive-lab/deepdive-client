@@ -1,19 +1,51 @@
 import type { Brand, Post, Tag } from "@/types/content"
 
 export const BRANDS: Brand[] = [
-  { id: "aws", name: "AWS", logoUrl: "https://placehold.co/100x40/1e293b/white?text=AWS" },
+  {
+    id: "aws",
+    name: "AWS",
+    logoUrl: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg"
+  },
   {
     id: "langchain",
     name: "LangChain",
-    logoUrl: "https://placehold.co/120x40/1e293b/white?text=LangChain",
+    logoUrl: "https://cdn.worldvectorlogo.com/logos/langchain-1.svg"
   },
-  { id: "pinecone", name: "Pinecone", logoUrl: "https://placehold.co/110x40/1e293b/white?text=Pinecone" },
-  { id: "redis", name: "Redis", logoUrl: "https://placehold.co/100x40/1e293b/white?text=Redis" },
-  { id: "mongodb", name: "MongoDB", logoUrl: "https://placehold.co/110x40/1e293b/white?text=MongoDB" },
-  { id: "upstage", name: "Upstage", logoUrl: "https://placehold.co/110x40/1e293b/white?text=Upstage" },
-  { id: "databricks", name: "Databricks", logoUrl: "https://placehold.co/100x40/1e293b/white?text=Databricks" },
-  { id: "tensorflow", name: "Tensorflow", logoUrl: "https://placehold.co/100x40/1e293b/white?text=Tensorflow" },
-  { id: "rabbitmq", name: "RabbitMQ", logoUrl: "https://placehold.co/100x40/1e293b/white?text=RabbitMQ" }
+  {
+    id: "pinecone",
+    name: "Pinecone",
+    logoUrl: "https://upload.wikimedia.org/wikipedia/commons/5/55/Pinecone-Full-Logo-Black.svg"
+  },
+  {
+    id: "redis",
+    name: "Redis",
+    logoUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Logo-redis.svg/960px-Logo-redis.svg.png"
+  },
+  {
+    id: "mongodb",
+    name: "MongoDB",
+    logoUrl: "https://upload.wikimedia.org/wikipedia/commons/9/93/MongoDB_Logo.svg"
+  },
+  {
+    id: "neo4j",
+    name: "Neo4j",
+    logoUrl: "https://upload.wikimedia.org/wikipedia/commons/e/e5/Neo4j-logo_color.png"
+  },
+  {
+    id: "databricks",
+    name: "Databricks",
+    logoUrl: "https://cdn.prod.website-files.com/657af0bb92ac84fc855f94c9/65aa2c9e055cec8b4f3bde05_Databricks.png"
+  },
+  {
+    id: "n8n",
+    name: "N8N",
+    logoUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/N8n-logo-new.svg/2560px-N8n-logo-new.svg.png"
+  },
+  {
+    id: "rabbitmq",
+    name: "RabbitMQ",
+    logoUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/RabbitMQ_logo.svg/1200px-RabbitMQ_logo.svg.png"
+  }
 ]
 
 export const TAGS: Tag[] = [
@@ -115,6 +147,32 @@ export const POSTS: Post[] = [
     companyName: "Databricks",
     tags: ["engineering", "llm"],
     readTime: "13 min read",
+    featured: false,
+  },
+  {
+    id: "8",
+    title: "Graph Data Modeling for AI Knowledge Bases",
+    description:
+      "How to use Neo4j's graph database to build more contextual and interconnected knowledge bases for your AI applications.",
+    thumbnail: "https://picsum.photos/800/600?random=8",
+    date: "Oct 8, 2024",
+    companyId: "neo4j",
+    companyName: "Neo4j",
+    tags: ["rag", "engineering"],
+    readTime: "10 min read",
+    featured: false,
+  },
+  {
+    id: "9",
+    title: "Automating AI Workflows with n8n",
+    description:
+      "A guide to building complex, multi-step AI automation workflows using n8n's low-code platform and native AI nodes.",
+    thumbnail: "https://picsum.photos/800/600?random=9",
+    date: "Oct 5, 2024",
+    companyId: "n8n",
+    companyName: "N8N",
+    tags: ["agents", "engineering"],
+    readTime: "9 min read",
     featured: false,
   },
 ]

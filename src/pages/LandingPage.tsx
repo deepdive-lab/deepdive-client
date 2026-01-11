@@ -19,7 +19,7 @@ export const LandingPage: React.FC = () => {
   };
 
   const latestPosts = [...POSTS]
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    .sort((a, b) => new Date(b.published_at).getTime() - new Date(a.published_at).getTime())
     .slice(0, 5);
 
   return (

@@ -9,7 +9,7 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ onStartReading, onSubscribeClick }) => {
   return (
-    <section className="relative pt-32 pb-20 overflow-hidden">
+    <section className="relative pt-32 pb-10 overflow-hidden">
       {/* Background Ambience */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-indigo-600/20 blur-[120px] rounded-full pointer-events-none opacity-50 mix-blend-screen" />
 

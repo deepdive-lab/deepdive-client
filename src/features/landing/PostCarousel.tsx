@@ -29,7 +29,7 @@ export function PostCarousel({ title, description, posts }: PostCarouselProps) {
   const navigate = useNavigate()
 
   return (
-    <section className="py-24">
+    <section className="py-8">
       <div className="container mx-auto px-4">
         {/* Header Section */}
         <div className="mb-16 text-center">
@@ -55,10 +55,13 @@ export function PostCarousel({ title, description, posts }: PostCarouselProps) {
             <CarouselContent className="-ml-4">
               {posts.map((post) => (
                 <CarouselItem key={post.id} className="pl-4 md:basis-1/2 lg:basis-1/3">
-                  <Card className="flex h-full flex-col border-slate-800 bg-slate-900/50 transition-all hover:border-indigo-500/50 hover:bg-slate-900/80 group">
+                  <Card
+                    className="flex h-full flex-col border-slate-800 bg-slate-900/50 transition-all hover:border-indigo-500/50 hover:bg-slate-900/80 group cursor-pointer"
+                    onClick={() => navigate(`/article/${post.id}`)}
+                  >
                     <div className="aspect-video w-full overflow-hidden rounded-t-xl">
                       <img
-                        src={post.thumbnail}
+                        src={post.thumbnail_url}
                         alt={post.title}
                         className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                         loading="lazy"
@@ -69,7 +72,7 @@ export function PostCarousel({ title, description, posts }: PostCarouselProps) {
                         <Badge variant="secondary" className="bg-indigo-500/10 text-indigo-400 border-indigo-500/20">
                           {post.companyName}
                         </Badge>
-                        <span className="text-xs text-slate-500">{post.date}</span>
+                        <span className="text-xs text-slate-500">{post.published_at}</span>
                       </div>
                       <CardTitle className="text-xl text-slate-100 group-hover:text-indigo-400 transition-colors line-clamp-2">
                         {post.title}
@@ -83,7 +86,10 @@ export function PostCarousel({ title, description, posts }: PostCarouselProps) {
                       <div className="flex flex-col gap-3">
                         <Button
                           className="w-full bg-[#5b52ff] hover:bg-[#4a42e5] text-white border-none group/btn h-12"
-                          onClick={() => window.open('#', '_blank')}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            navigate(`/article/${post.id}`);
+                          }}
                         >
                           <span className="flex-1 text-center">Read Article</span>
                           <div className="relative overflow-hidden w-5 h-5">
@@ -94,7 +100,10 @@ export function PostCarousel({ title, description, posts }: PostCarouselProps) {
                         <Button
                           variant="outline"
                           className="w-full border-slate-700 text-slate-300 hover:bg-slate-800 hover:text-white h-12"
-                          onClick={() => navigate('/archive')}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            navigate('/archive');
+                          }}
                         >
                           Learn more
                         </Button>

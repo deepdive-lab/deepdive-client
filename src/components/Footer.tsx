@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Cpu, Github, Twitter, Linkedin } from 'lucide-react';
+import { SquareChartGantt, Github, Twitter, Linkedin } from 'lucide-react';
 
 export const Footer = () => {
   return (
@@ -9,9 +9,9 @@ export const Footer = () => {
           <div className="col-span-1 md:col-span-2">
             <Link to="/" className="flex items-center gap-2 mb-6 group">
               <div className="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center transition-transform group-hover:scale-110">
-                <Cpu className="text-white w-5 h-5" />
+                <SquareChartGantt className="text-white w-5 h-5" />
               </div>
-              <span className="font-bold text-xl tracking-tight text-white">DeepDiveLab</span>
+              <span className="font-bold text-xl tracking-tight text-white">딥다이브랩</span>
             </Link>
             <p className="text-slate-400 max-w-sm leading-relaxed">
               최첨단 AI 기술과 엔지니어링 통찰력을 제공합니다.
@@ -22,9 +22,8 @@ export const Footer = () => {
           <div>
             <h4 className="font-semibold text-white mb-6">Explore</h4>
             <ul className="space-y-4 text-sm text-slate-400">
-              <li><Link to="/" className="hover:text-indigo-400 transition-colors">Features</Link></li>
-              <li><Link to="/archive" className="hover:text-indigo-400 transition-colors">Topics</Link></li>
-              <li><Link to="/archive" className="hover:text-indigo-400 transition-colors">Showcase</Link></li>
+              <li><Link to="/archive" className="hover:text-indigo-400 transition-colors">Archive</Link></li>
+              <li><Link to="/archive" className="hover:text-indigo-400 transition-colors">About</Link></li>
             </ul>
           </div>
 

@@ -16,7 +16,7 @@ import { Badge } from "@/components/ui/badge"
 
 interface FilterItem {
   id: string
-  label: string
+  name: string
 }
 
 interface FilterDialogProps {
@@ -78,7 +78,7 @@ function FilterDialog({
                 onClick={() => onToggle(item.id)}
               >
                 <div className="flex items-center justify-center gap-1">
-                  <span className="truncate">{item.label}</span>
+                  <span className="truncate">{item.name}</span>
                   {active && <Check className="h-3 w-3 shrink-0 text-indigo-400" />}
                 </div>
               </Button>
@@ -122,8 +122,8 @@ export function ArchiveFilterBar({
   const selectedCompaniesCount = filters.companies.size
   const selectedTagsCount = filters.tags.size
 
-  const companyItems = BRANDS.map(b => ({ id: b.id, label: b.name }))
-  const tagItems = TAGS.map(t => ({ id: t.id, label: t.label }))
+  const companyItems = BRANDS.map(b => ({ id: b.id, name: b.name }))
+  const tagItems = TAGS.map(t => ({ id: t.id, name: t.name }))
 
   return (
     <div className="mb-8 flex flex-wrap items-center gap-4 border-b border-slate-800/50 pb-8">
@@ -194,7 +194,7 @@ export function ArchiveFilterBar({
               variant="secondary"
               className="flex items-center gap-1 bg-purple-500/10 text-purple-300 hover:bg-purple-500/20"
             >
-              {tag.label}
+              {tag.name}
               <X
                 className="h-3 w-3 cursor-pointer"
                 onClick={() => onToggleTag(tagId)}

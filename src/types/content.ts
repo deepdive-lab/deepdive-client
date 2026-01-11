@@ -6,20 +6,22 @@ export interface Brand {
 
 export interface Tag {
   id: string
-  label: string
+  name: string
 }
 
 export interface Post {
   id: string
-  title: string
-  description: string
-  thumbnail: string
-  date: string
   companyId: string
   companyName: string
-  tags: string[]
+  title: string
+  description: string
+  content: string
+  thumbnail_url: string
+  origin_url: string
+  published_at: string
   readTime: string
-  featured?: boolean
+  viewCount: number
+  tags: string[]
 }
 
 export interface FilterState {

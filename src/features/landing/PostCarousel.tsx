@@ -1,7 +1,6 @@
 import { ArrowUpRight } from "lucide-react"
 import { useNavigate } from "react-router-dom"
 
-import { POSTS } from "@/data/content"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import {
@@ -18,12 +17,16 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel"
+import type { Post } from "@/types/content"
 
-export function LatestPostsCarousel() {
+interface PostCarouselProps {
+  title: string
+  description: string
+  posts: Post[]
+}
+
+export function PostCarousel({ title, description, posts }: PostCarouselProps) {
   const navigate = useNavigate()
-  const latestPosts = [...POSTS]
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-    .slice(0, 5)
 
   return (
     <section className="py-24">
@@ -31,11 +34,11 @@ export function LatestPostsCarousel() {
         {/* Header Section */}
         <div className="mb-16 text-center">
           <h2 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
-            Into the Engine Room
+            {title}
           </h2>
           <div className="mx-auto mt-6 max-w-2xl">
             <p className="text-lg text-slate-400">
-              Peek inside the Black Box and pull the latest commits from the frontiers.
+              {description}
             </p>
           </div>
         </div>
@@ -50,7 +53,7 @@ export function LatestPostsCarousel() {
             className="w-full"
           >
             <CarouselContent className="-ml-4">
-              {latestPosts.map((post) => (
+              {posts.map((post) => (
                 <CarouselItem key={post.id} className="pl-4 md:basis-1/2 lg:basis-1/3">
                   <Card className="flex h-full flex-col border-slate-800 bg-slate-900/50 transition-all hover:border-indigo-500/50 hover:bg-slate-900/80 group">
                     <div className="aspect-video w-full overflow-hidden rounded-t-xl">

@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Hero } from '@/features/landing/Hero';
 import { BrandMarquee } from '@/features/landing/Marquee';
-import { LatestPostsCarousel } from '@/features/landing/LatestPostCarousel';
+import { PostCarousel } from '@/features/landing/PostCarousel';
 import { SubscribeDialog } from '@/features/landing/SubscribeDialog';
+import { POSTS } from '@/data/content';
 
 export const LandingPage: React.FC = () => {
   const navigate = useNavigate();
@@ -17,6 +18,10 @@ export const LandingPage: React.FC = () => {
     setIsSubscribeOpen(true);
   };
 
+  const latestPosts = [...POSTS]
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    .slice(0, 5);
+
   return (
     <div className="space-y-20 pb-20">
       <Hero
@@ -24,8 +29,16 @@ export const LandingPage: React.FC = () => {
         onSubscribeClick={handleSubscribe}
       />
       <BrandMarquee />
-      <LatestPostsCarousel />
-
+      <PostCarousel
+        title="Into the Engine Room"
+        description="Peek inside the Black Box and pull the latest commits from the frontiers."
+        posts={latestPosts}
+      />
+      <PostCarousel
+        title="Check out the popular reads"
+        description="Explore the most popular posts from our archive."
+        posts={latestPosts}
+      />
       <SubscribeDialog
         open={isSubscribeOpen}
         onOpenChange={setIsSubscribeOpen}

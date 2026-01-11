@@ -60,7 +60,7 @@ function FilterDialog({
           <ChevronDown className="ml-2 h-4 w-4 opacity-50" />
         </Button>
       </DialogTrigger>
-      <DialogContent className="border-slate-800 bg-slate-900 text-slate-100 sm:max-w-2xl">
+      <DialogContent className="border-slate-800 bg-slate-900 text-slate-100 sm:max-w-lg">
         <DialogHeader>
           <DialogTitle>{dialogTitle}</DialogTitle>
         </DialogHeader>
@@ -72,12 +72,12 @@ function FilterDialog({
                 key={item.id}
                 variant="outline"
                 className={cn(
-                  "justify-start border-slate-800 bg-slate-900/40 text-left text-xs text-slate-300 hover:border-indigo-500/50 hover:bg-slate-800 sm:text-sm",
+                  "justify-center border-slate-800 bg-slate-900/40 text-center text-xs text-slate-300 hover:border-indigo-500/50 hover:bg-slate-800 sm:text-sm",
                   active && "border-indigo-500/60 bg-indigo-500/10 text-white"
                 )}
                 onClick={() => onToggle(item.id)}
               >
-                <div className="flex w-full items-center justify-between gap-1">
+                <div className="flex items-center justify-center gap-1">
                   <span className="truncate">{item.label}</span>
                   {active && <Check className="h-3 w-3 shrink-0 text-indigo-400" />}
                 </div>

@@ -9,6 +9,7 @@ import n8nLogo from "@/assets/n8n.svg"
 import rabbitmqLogo from "@/assets/rabbitmq.png"
 import postgresqlLogo from "@/assets/postgresql.svg"
 import pineconeLogo from "@/assets/pinecone.svg"
+import chromaLogo from "@/assets/chroma.svg"
 
 export const BRANDS: Brand[] = [
   {
@@ -25,6 +26,11 @@ export const BRANDS: Brand[] = [
     id: "pinecone",
     name: "Pinecone",
     logoUrl: pineconeLogo
+  },
+  {
+    id: "chroma",
+    name: "Chroma",
+    logoUrl: chromaLogo
   },
   {
     id: "redis",
